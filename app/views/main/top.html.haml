@@ -1,0 +1,33 @@
+%h3 プロ野球　リーグ再編成
+%p OR実験の成果物です。
+
+- flash.each do |message_type, message|
+  - if message_type == "notice"
+    .alert.alert-success.fade.in
+      %a{:href => "#", :class => "close", "data-dismiss" => "alert", "aria-label" => "alert"}
+        &times;
+      = message
+  - elsif message_type == "alert"
+    .alert.alert-warning.fade.in
+      %a{:href => "#", :class => "close", "data-dismiss" => "alert", "aria-label" => "alert"}
+        &times;
+      = message
+
+= form_tag '/result', method: :post do
+  - %w(STRENGTH POPULAR HOMERUN DEFENCE MONEY).each do |item|
+    .checkbox
+      %label
+        = check_box_tag 'scores[]', item
+        = item
+        %br
+  .radio
+    %label
+      = radio_button_tag 'sort', 'best', class: 'checked'
+      = 'トップ５'
+      %br
+  .radio
+    %label
+      = radio_button_tag 'sort', 'worst'
+      = 'ワースト５'
+      %br
+  = submit_tag '送信', class: 'btn btn-primary'
