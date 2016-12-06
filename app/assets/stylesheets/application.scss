@@ -1,3 +1,34 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.container {
+  width: 300px;
+  margin: 0 auto;
+}
+
+p {
+  text-align: center;
+  font-weight: bold;
+}
+
+.checkbox {
+  background: rgba(229, 229, 229, 0.76);
+  padding: 5px;
+  border-radius: 3px;
+  margin-bottom: 15px;
+}
+
+.radio {
+  background: rgba(229, 229, 209, 0.76);
+  padding: 5px;
+  border-radius: 3px;
+  margin-bottom: 15px;
+}
+
+label {
+  width: 100%;
+}
+
+.btn {
+  width: 100%;
+}
