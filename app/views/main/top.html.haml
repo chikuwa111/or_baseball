@@ -1,5 +1,4 @@
 %h3 プロ野球　リーグ再編成
-%h5 OR実験の成果物です。
 
 - flash.each do |message_type, message|
   - if message_type == "notice"
@@ -15,10 +14,10 @@
 
 = form_tag '/result', method: :post do
   %p 用いる指標を１つ以上選択してください
-  - %w(STRENGTH POPULAR HOMERUN DEFENCE MONEY).each do |item|
+  - %w(STRENGTH POPULAR HOMERUN DEFENCE MONEY).each_with_index do |item, index|
     .checkbox
       %label
-        = check_box_tag 'scores[]', item
+        = check_box_tag 'scores[]', index
         = item
         %br
   %p 出力したい結果を選択してください
@@ -32,4 +31,6 @@
       = radio_button_tag 'sort', 'worst'
       = 'ワースト５'
       %br
-  = submit_tag '送信', class: 'btn btn-primary'
+  = submit_tag '再編成する', class: 'btn btn-primary'
+
+%h5 OR実験の成果物です。
