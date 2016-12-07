@@ -1,0 +1,12 @@
+- if teams[0].is_a?(Array)
+  - central = ["ヤクルト", "巨人", "阪神", "広島", "中日", "DeNA"]
+  - 6.times do |i|
+    %tr
+      - if central.include?(teams[0][i])
+        %td.success= teams[0][i]
+      - else
+        %td.info= teams[0][i]
+      - if central.include?(teams[1][i])
+        %td.success= teams[1][i]
+      - else
+        %td.info= teams[1][i]

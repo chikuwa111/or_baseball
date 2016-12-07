@@ -1,5 +1,16 @@
-=@scores
+%p 選択した項目
+- @scores.each do |i|
+  %span.info= @index[i.to_i]
 %br
-=@sort
-%br
-=@result
+- @result.each_with_index do |r, i|
+  - if @sort == "best"
+    %p= "ベスト" + (i + 1).to_s
+  - else
+    %p= "ワースト" + (5 - i).to_s
+  %table.table.table-bordered
+    %tr
+      %th リーグ１
+      %th リーグ２
+    - r.each do |teams|
+      = render 'main/table', teams: teams, sort: @sort
+  %br

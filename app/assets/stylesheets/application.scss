@@ -16,6 +16,11 @@ p {
   font-weight: bold;
 }
 
+th, td {
+  text-align: center;
+  width: 150px;
+}
+
 .checkbox {
   background: rgba(229, 229, 229, 0.76);
   padding: 5px;
