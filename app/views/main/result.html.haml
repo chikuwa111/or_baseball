@@ -14,7 +14,12 @@
       %th リーグ２
     - r.each do |teams|
       = render 'main/table', teams: teams, sort: @sort
-  - r.each do |scores|
-    = render 'main/score', scores: scores, fix: @fix
+  .detail-section
+    .detail-btn
+      %i.fa.fa-chevron-down.right
+      .gap 詳細を見る
+    .detail
+      - r.each do |scores|
+        = render 'main/score', scores: scores, fix: @fix
   %br
 = link_to "戻る", root_path, class: "btn btn-warning"
