@@ -1,0 +1,16 @@
+- if !scores[0].is_a?(Array)
+  - name = ["STRENGTH GAP", "POPULAR  GAP", "HOMERUN  GAP", "DEFENCE  GAP", "MONEY    GAP"]
+  - scores.each_with_index do |s, i|
+    %div
+      - unless i == 0
+        - if s > 0
+          %i.fa.fa-arrow-circle-up.fa-2x.left
+          %i.fa.fa-arrow-circle-down.fa-2x.right
+        - else
+          %i.fa.fa-arrow-circle-down.fa-2x.left
+          %i.fa.fa-arrow-circle-up.fa-2x.right
+      .gap
+        = name[i]
+        %br
+        = (s * fix[i]).round(2).abs
+

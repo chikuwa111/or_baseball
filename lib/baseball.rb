@@ -96,7 +96,7 @@ module Baseball
     return sort_result
   end
 
-  def get_result(index)
+  def get_data(index)
     result = {}
     sum = [0, 0, 0, 0, 0]
     TEAM_ARRAY.combination(6) do |league|
@@ -116,8 +116,8 @@ module Baseball
       result[pair] = [strength_gap, popular_gap, homerun_gap, defence_gap, money_gap]
     end
     fix = get_fix(sum)
-
-    return sort_result(result, fix, index)
+    sort_result = sort_result(result, fix, index)
+    return [fix, sort_result]
   end
 
 end

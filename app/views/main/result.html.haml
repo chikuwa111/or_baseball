@@ -1,6 +1,7 @@
 %p 選択した項目
-- @scores.each do |i|
-  %span.info= @index[i.to_i]
+.scores
+  - @scores.each do |i|
+    = @index[i.to_i]
 %br
 - @result.each_with_index do |r, i|
   - if @sort == "best"
@@ -13,5 +14,7 @@
       %th リーグ２
     - r.each do |teams|
       = render 'main/table', teams: teams, sort: @sort
+  - r.each do |scores|
+    = render 'main/score', scores: scores, fix: @fix
   %br
 = link_to "戻る", root_path, class: "btn btn-warning"
