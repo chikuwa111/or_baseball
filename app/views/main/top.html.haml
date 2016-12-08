@@ -13,7 +13,10 @@
       = message
 
 = form_tag '/result', method: :post do
-  %p 均一化したい指標を選択してください
+  %p
+    リーグ間で平均化したいと思う
+    %br>/
+    指標を1つ以上選択してください
   - %w(STRENGTH POPULAR HOMERUN DEFENCE MONEY).each_with_index do |item, index|
     .checkbox
       %label
